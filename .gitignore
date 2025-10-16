@@ -1,0 +1,6 @@
+# Virtual environment
+.venv/
+# Data files (keep them small or exclude large raw files)
+*.csv
+# Specific OS files
+.DS_Store
