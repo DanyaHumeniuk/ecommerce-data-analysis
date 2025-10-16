@@ -1,4 +1,4 @@
-import requests          # helps you get data from the web (use to pull datasets or API data directly into python environment)
+import requests          # helps get data from the web (use to pull datasets or API data directly into python environment)
 import pandas as pd      # helps load, clean, analyze, visualize structured data
 import os                # lets you interact with your computer's file system (check or change directories, build file paths, handle files dynamically)
 
@@ -25,8 +25,8 @@ CURRENCY_API_URL = "https://api.exchangerate-api.com/v4/latest/USD"
 
 try:
     response = requests.get(CURRENCY_API_URL)
-    response.raise_for_status()
-    data = response.json()
+    response.raise_for_status() # checks if the request works
+    data = response.json()      # converts API's reply (text) into Python dictionary
 
     eur_rate = data['rates']['EUR']
     print(f"\n API Call successful: Today's USD to EUR exchange rate is {eur_rate:.4f}.")
